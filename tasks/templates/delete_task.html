@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<div class="container" style="margin:10% 20%;">
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete task id : {{ object.id }} belonging to {{ object.user.username }}?</p>
+        <input type="submit"class="btn btn-danger" value="yes">
+    </form>
+</div>

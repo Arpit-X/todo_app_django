@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container user_card_list">
+
+            <h1>{{ title }}</h1>
+    <a href="{% url 'tasks:add_task' %}"><input type="button" class="btn pull-right" value="+ Add Task"></a>
+    <table class="table table-striped">
+        <thead>
+            <th>NAME</th>
+            <th>Created on</th>
+            <th>Task</th>
+            <th>Description</th>
+            <th>Due on</th>
+        </thead>
+        <tbody>
+            {% for data in dataSet %}
+                <tr>
+                    <td>{{ data.id }}</td>
+                    <td>{{ data.time_created }}</td>
+                    <td>{{ data.subject}}</td>
+                    <td>{{ data.desciption }}</td>
+                    <td>{{ data.deadline }}</td>
+                    <td>
+                        <a href="{% url 'tasks:update_task' pk=data.id %}"><input class="btn btn-primary" type="button" value="Edit"></a>
+                        <a href="{% url 'tasks:delete_task' pk=data.id %}"><input class="btn btn-danger" type="button" value="Delete"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

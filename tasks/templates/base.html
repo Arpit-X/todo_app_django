@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The TODO list</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar pull-right">
+            <a href="{% url 'tasks:show_user_tasks' %}"><input type="button" class="btn btn-primary" value="List"/></a>
+            <a href="{% url 'logout' %}"><input type="button" class="btn btn-danger" value="Log Out"/></a>
+    </nav>
+    {% block content %}
+
+
+    {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .container{
+            margin-top: 15%;
+            border: 1px solid black;
+            border-radius: 20px;
+            width:30%;
+            padding:1em;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <div class="container col-sm-16" >
+        <form  class="form-horizontal" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-success" value="Log In"/>
+            <a href="{% url 'signup_form' %}" ><input type="button" class="btn btn-link" value="Sign Up"></a>
+        </form>
+    </div>
+</center>
+</body>
+</html>
